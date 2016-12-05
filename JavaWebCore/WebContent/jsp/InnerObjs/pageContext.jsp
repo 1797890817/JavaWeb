@@ -11,16 +11,20 @@
 	<%
 	pageContext.setAttribute("name", "zhangsan");
 	pageContext.setAttribute("birthday", "1980-10-21");
+	pageContext.setAttribute("location", "hefei", pageContext.APPLICATION_SCOPE);
 	%>
 	
 	<%-- 获取page范围属性值  --%>
 	<%
 		String userName = (String) pageContext.getAttribute("name");
 		String userBirth =(String) pageContext.getAttribute("birthday");
+		//String locat =(String) pageContext.getAttribute("location");
+		String locat =(String) application.getAttribute("location");
 	%>
 	<p>用户名:</p><%=userName %>
 	<p>生&nbsp;日:</p><%=userBirth %>
+	<p>地&nbsp;址:</p><%=locat %>
 	<a href="pageContext2.jsp">跳转 </a>
-	<jsp:forward page="pageContext2.jsp"></jsp:forward>
+	<%-- <jsp:forward page="pageContext2.jsp"></jsp:forward> --%>
 </body>
 </html>

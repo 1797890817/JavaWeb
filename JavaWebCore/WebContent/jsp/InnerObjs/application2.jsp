@@ -7,21 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- 设定request范围属性 --%>
-	<%
-	request.setAttribute("name", "zhangsan");
-	request.setAttribute("birthday", "1980-10-21");
 	
-	%>
-	
-	<%-- 获取request范围属性值  --%>
+	<%-- 获取application范围属性值  --%>
 	<%
-		String userName = (String) request.getAttribute("name");
-		String userBirth =(String) request.getAttribute("birthday");
+		String userName = (String) application.getAttribute("name");
+		String userBirth =(String) application.getAttribute("birthday");
 	%>
 	<p>用户名:</p><%=userName %>
 	<p>生&nbsp;日:</p><%=userBirth %>
-	<a href="request2.jsp">跳转 </a>
-	<jsp:forward page="request2.jsp"></jsp:forward>
+	
 </body>
 </html>
