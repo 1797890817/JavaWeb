@@ -68,6 +68,19 @@
 	<span>${'${'}A=(true? 0:1) }</span>${A=(true ? 0:1) }<br/>
 	<span>${'${'}A!=0? 0:1 }</span>${A!=0 ? 0:1 }<br/>
 	<span>${'${'}A==0? 0:1 }</span>${A==0 ? 0:1 }<br/>
+	<hr/>
+	<p>变量范围：</p>
+	<span>A = </span>${A }<br/>
+	<span>pageScope.A = </span>${pageScope.A }<br/>
+	<span>pageScope[A] = </span>${pageScope['A']}<br/>
+	<span>pageScope[A] = </span>${pageScope["A"]}<br/>
+	<span>pageScope.B = </span>${pageScope.B }<br/>
+	<span>pageScope[B] = </span>${pageScope['B'] }<br/>
+	<span>pageScope[B] = </span>${pageScope["B"] }<br/>
+	<%-- <span>${'${'}A==0? 1:0 }</span>${A==0 ? 1:0 }<br/> --%>
+	<span>requestScope.A = </span>${requestScope.A }<br/>
+	<span>sessionScope.A = </span>${sessionScope.A }<br/>
+	<span>applicationScope.A = </span>${applicationScope.A }<br/>
 	
 </body>
 </html>
