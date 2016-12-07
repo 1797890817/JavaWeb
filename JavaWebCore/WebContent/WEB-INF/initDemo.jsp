@@ -1,5 +1,4 @@
-.
-0.
+
 <%@ page contentType="text/html" pageEncoding="GBK"%>
 <html>
 <head><title>获取初始化信息</title></head>
