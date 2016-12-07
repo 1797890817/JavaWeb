@@ -12,6 +12,10 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	<context-param>
+		<param-name>rri</param-name>
+		<param-value>1223</param-value>
+	</context-param>
 	<servlet>
 		<servlet-name>dbinit</servlet-name>
 		<jsp-file>/WEB-INF/initDemo.jsp</jsp-file>

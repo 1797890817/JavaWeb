@@ -17,7 +17,7 @@
 	<br />
 	<span>5/3:</span> ${5/3}
 	<br />
-	<span>5div3:</span> ${5 div 3}
+	<span>5 div 3:</span> ${5 div 3}
 	<br />
 	<span>5%3:</span> ${5%3}
 	<br />
