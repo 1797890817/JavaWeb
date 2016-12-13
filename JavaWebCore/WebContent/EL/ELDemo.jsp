@@ -17,7 +17,7 @@
 	<br />
 	<span>5/3:</span> ${5/3}
 	<br />
-	<span>5 div 3:</span> ${5 div 3}
+	<%-- <span>5 div 3:</span> ${5 div 3} --%>
 	<br />
 	<span>5%3:</span> ${5%3}
 	<br />
@@ -41,7 +41,7 @@
 	<p>关系运算</p>
 	<span>7 == 5 :</span>${ 7==5}<br/>
 	<span>7 eq 5 :</span>${ 7 eq 5}<br/>
-	<span>7 ne 5 :</span>${ 7 ne 5}<br/>
+	<%-- <span>7 ne 5 :</span>${ 7 ne 5}<br/> --%>
 	<span>7 > 5 :</span>${ 7>5}<br/>
 	<span>7 gt 5 :</span>${ 7 gt 5}<br/>
 	<span>7 &ge; 5 :</span>${ 7 gt 5}<span>****</span><br/>
