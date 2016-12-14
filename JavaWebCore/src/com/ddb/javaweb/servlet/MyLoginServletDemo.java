@@ -39,10 +39,15 @@ public class MyLoginServletDemo extends HttpServlet {
 		out.println("<BODY>");
 		out.println("<H2>调用了doGet()方法</H2><p>");
 		out.println("<H2>用户输入信息如下：</H2>");
+		//request.setCharacterEncoding("UTF-8");	
+		//解决中文参数乱码方式一：设定Request对象的字符集
 		String username = request.getParameter("username");
+		username = new String(username.getBytes("ISO8859_1"),"UTF-8");
 		if (username == null || username == "")
 			username = "未输入";
 		String userpwd = request.getParameter("password");
+		userpwd = new String(userpwd.getBytes("ISO8859-1"),"UTF-8");
+		//解决中文参数乱码方式二：new 一个新的字串。
 		if (userpwd == null || userpwd == "")
 			userpwd = "未输入";
 		out.println("<H2>用户名：" + username + "</H2>");
