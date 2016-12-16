@@ -8,11 +8,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MyLoginServletDemo
  */
-@WebServlet("/servlet/MyLoginServlet2")
+@WebServlet(
+		name="MyLoginServletDemo",
+		urlPatterns={"/servlet/MyLoginServlet2"}
+		)
 public class MyLoginServletDemo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,8 +35,8 @@ public class MyLoginServletDemo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	
-		//response.setContentType("text/html;charset=GB2312");// 设置生成的文档类型  解决页面乱码问题
-		response.setCharacterEncoding("UTF-8");	//也可以解决页面乱码问题
+		response.setContentType("text/html;charset=GB2312");// 设置生成的文档类型  解决页面乱码问题
+		//response.setCharacterEncoding("UTF-8");	//也可以解决页面乱码问题
 		PrintWriter out = response.getWriter();// 得到输出字符输出流
 		out.println("<HTML>");// 输出相应的HTML源文件
 		out.println("<HEAD><TITLE>用servlet测试get/post方法</TITLE></HEAD>");
@@ -42,14 +46,18 @@ public class MyLoginServletDemo extends HttpServlet {
 		//request.setCharacterEncoding("UTF-8");	
 		//解决中文参数乱码方式一：设定Request对象的字符集
 		String username = request.getParameter("username");
-		username = new String(username.getBytes("ISO8859_1"),"UTF-8");
+		//username = new String(username.getBytes("ISO8859_1"),"UTF-8");
 		if (username == null || username == "")
 			username = "未输入";
 		String userpwd = request.getParameter("password");
-		userpwd = new String(userpwd.getBytes("ISO8859-1"),"UTF-8");
+		//userpwd = new String(userpwd.getBytes("ISO8859-1"),"UTF-8");
 		//解决中文参数乱码方式二：new 一个新的字串。
 		if (userpwd == null || userpwd == "")
 			userpwd = "未输入";
+		if (!username.equals("未输入") && !userpwd.equals("未输入")) {
+			HttpSession hs = request.getSession();
+			hs.setAttribute("userid", username);
+		} 
 		out.println("<H2>用户名：" + username + "</H2>");
 		out.println("<H2>密　码：" + userpwd + "</H2>");
 		out.println("</BODY>");

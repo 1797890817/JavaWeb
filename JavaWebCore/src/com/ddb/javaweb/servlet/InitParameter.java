@@ -17,10 +17,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(
 		value = { "/servlet/InitParameter", "/servlet/abc", "/servlet/cde" },
-		/*urlPatterns = { "/servlet/InitParameter", "/servlet/abc", "/servlet/cde" },*/ initParams = {
-		@WebInitParam(name = "institute", value = "职业培训学院"), @WebInitParam(name = "major", value = "Java技术"),
+		/*urlPatterns = { "/servlet/InitParameter", "/servlet/abc", "/servlet/cde" },*/ 
+		initParams = {
+		@WebInitParam(name = "institute", value = "职业培训学院"), 
+		@WebInitParam(name = "major", value = "Java技术"),
 		@WebInitParam(name = "count", value = "10000")},
-		largeIcon="ACD")
+		loadOnStartup=1)
 public class InitParameter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String myInstitute = null;
