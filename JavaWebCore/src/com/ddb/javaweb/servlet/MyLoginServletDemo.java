@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MyLoginServletDemo
@@ -53,6 +54,10 @@ public class MyLoginServletDemo extends HttpServlet {
 		//解决中文参数乱码方式二：new 一个新的字串。
 		if (userpwd == null || userpwd == "")
 			userpwd = "未输入";
+		if (!username.equals("未输入") && !userpwd.equals("未输入")) {
+			HttpSession hs = request.getSession();
+			hs.setAttribute("userid", username);
+		} 
 		out.println("<H2>用户名：" + username + "</H2>");
 		out.println("<H2>密　码：" + userpwd + "</H2>");
 		out.println("</BODY>");
