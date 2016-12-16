@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class UserNameFilter
  */
-@WebFilter(
+/*@WebFilter(
 		filterName="f01",
 		dispatcherTypes = {
 		DispatcherType.REQUEST, 
@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 }, 
 		//urlPatterns = { "/servlet/MyLoginServlet2" },
 		servletNames={"MyLoginServletDemo"}
-)
+)*/
 public class UserNameFilter implements Filter {
 
     /**

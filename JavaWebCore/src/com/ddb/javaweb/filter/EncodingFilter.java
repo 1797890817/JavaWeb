@@ -14,8 +14,8 @@ import javax.servlet.annotation.WebInitParam;
 /**
  * Servlet Filter implementation class EncodingFilter
  */
-@WebFilter(
-		filterName="f05",
+/*@WebFilter(
+		filterName="f03",
 		dispatcherTypes = {
 				DispatcherType.REQUEST, 
 				DispatcherType.FORWARD, 
@@ -28,7 +28,7 @@ import javax.servlet.annotation.WebInitParam;
 		servletNames={"MyLoginServletDemo"},
 		initParams = { 
 				@WebInitParam(name = "charset", value = "UTF-8", description = "utf-8编码")
-		})
+		})*/
 public class EncodingFilter implements Filter {
 	private String charset;
     /**

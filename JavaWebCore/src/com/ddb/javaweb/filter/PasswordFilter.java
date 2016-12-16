@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class PasswordFilter
  */
-@WebFilter(
-		filterName="f03",
+/*@WebFilter(
+		filterName="f05",
 		dispatcherTypes = {
 				DispatcherType.REQUEST, 
 				DispatcherType.FORWARD, 
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 		},
 		//urlPatterns = { "/servlet/MyLoginServlet2" },
 		servletNames={"MyLoginServletDemo"}
-		)
+		)*/
 public class PasswordFilter implements Filter {
 
     /**
