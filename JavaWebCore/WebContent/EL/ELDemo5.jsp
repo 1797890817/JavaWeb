@@ -28,7 +28,7 @@
 	<span>request.remotePort:</span>${pageContext.request.remotePort}<br/>
 	<hr/>
 	session.id:${pageContext.session.id}<br/>
-	session.id:${pageContext.session.isNew()}<br/>
+	<%-- session.id:${pageContext.session.isNew()}<br/> --%>
 	servletContext.serverInfo:${pageContext.servletContext.serverInfo }
 
 </body>
