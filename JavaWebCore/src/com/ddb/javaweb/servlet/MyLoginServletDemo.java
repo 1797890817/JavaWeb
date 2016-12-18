@@ -54,7 +54,7 @@ public class MyLoginServletDemo extends HttpServlet {
 		//解决中文参数乱码方式二：new 一个新的字串。
 		if (userpwd == null || userpwd == "")
 			userpwd = "未输入";
-		if (!username.equals("未输入") && !userpwd.equals("未输入")) {
+		if (!username.equals("未输入") && !userpwd.equals("未输入")) {//注意，本例如果，用户名和密码就是“为输入”，则也不会设定会话！
 			HttpSession hs = request.getSession();
 			hs.setAttribute("userid", username);
 		} 
