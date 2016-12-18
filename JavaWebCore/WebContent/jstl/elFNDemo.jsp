@@ -12,8 +12,8 @@
 		String[] video = { "电影", "电视剧", "动画片", "记录片" };
 		request.setAttribute("video", video);
 	%>
-	大写转小写：I LOVE CHINA!&nbsp;&nbsp;${fn:toLowerCase("I LOVE CHINA!")}
-	<br /> 取长度：I LOVE CHINA!的长度为${fn:length("I LOVE CHINA!")}
+<%-- 	大写转小写：I LOVE CHINA!&nbsp;&nbsp;${fn:toLowerCase("I LOVE CHINA!")}
+	<br /> 取长度：I LOVE CHINA!的长度为${fn:length("I LOVE CHINA!")} --%>
 	<br /> video的长度为：${fn:length(video)}
 	<br /> video的值连接成一个字符串为：${fn:join(video,"、")}
 	<br /> video的值连接成一个字符串为：${fn:join(video,"+")}
