@@ -15,31 +15,33 @@ import javax.servlet.annotation.WebListener;
  */
 //@WebListener
 public class ServletContextListenerDemo implements ServletContextListener {
-	//private PrintStream print;
+	private PrintStream print;
 
     /**
      * Default constructor. 
      * @throws FileNotFoundException 
      */
     public ServletContextListenerDemo() {
-    	/*PrintStream out = null;
+    	PrintStream out = null;
 		try {
-			out = new PrintStream(new FileOutputStream("/home/deepin/listener.log"));
+			//out = new PrintStream(new FileOutputStream("/home/deepin/listener.log"));
+			out = new PrintStream(new FileOutputStream("C:\\listener.log"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	System.setOut(out);
-    	print = System.out;*/
+    	//System.setOut(out);
+    	print = System.out;
     }
 
 	/**
      * @see ServletContextListener#contextDestroyed(ServletContextEvent)
      */
     public void contextDestroyed(ServletContextEvent arg0)  { 
-    	String date = new Date().toString();
-    	System.out.println("####ServletContextListenerDemo 容器被销毁－－－>"+arg0.getServletContext().getContextPath());
-    	//print.println(date+":####ServletContextListenerDemo 容器被销毁－－－>"+arg0.getServletContext().getContextPath());
+    	//String date = new Date().toString();
+    	String date = new Date().toLocaleString();
+    	//System.out.println("####ServletContextListenerDemo 容器被销毁－－－>"+arg0.getServletContext().getContextPath());
+    	print.println(date+":####ServletContextListenerDemo 容器被销毁－－－>"+arg0.getServletContext().getContextPath());
     }
 
 	/**
@@ -47,8 +49,8 @@ public class ServletContextListenerDemo implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent arg0)  { 
     	String date = new Date().toString();
-       	System.out.println("####ServletContextListenerDemo 容器初始化－－－>"+arg0.getServletContext().getContextPath());
-    	//print.println(date + ":####ServletContextListenerDemo 容器初始化－－－>"+arg0.getServletContext().getContextPath());
+       	//System.out.println("####ServletContextListenerDemo 容器初始化－－－>"+arg0.getServletContext().getContextPath());
+    	print.println(date + ":####ServletContextListenerDemo 容器初始化－－－>"+arg0.getServletContext().getContextPath());
     }
 	
 }

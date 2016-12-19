@@ -11,9 +11,9 @@ import javax.servlet.http.HttpSessionBindingEvent;
  * HttpSessionAttributeListener
  *
  */
-//@WebListener
+@WebListener
 public class HttpSessionAttributeListenerDemo implements HttpSessionAttributeListener {
-
+  
 	/**
 	 * Default constructor.
 	 */

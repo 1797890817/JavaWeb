@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSessionListener;
  * Application Lifecycle Listener implementation class HttpSessionListenerDemo
  *
  */
-//@WebListener
+@WebListener
 public class HttpSessionListenerDemo implements HttpSessionListener {
 
     /**

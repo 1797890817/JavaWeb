@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebListener;
  * ServletRequestAllListenerDemo
  *
  */
-//@WebListener
+@WebListener
 public class ServletRequestAllListenerDemo
 		implements ServletRequestListener, ServletRequestAttributeListener, AsyncListener {
 

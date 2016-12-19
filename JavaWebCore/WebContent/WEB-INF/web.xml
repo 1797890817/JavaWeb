@@ -9,6 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <session-config>
+  	<session-timeout>30</session-timeout><!-- 30分钟超时 -->
+  </session-config>
+  <listener>
+  	<listener-class>com.ddb.javaweb.listener.ServletContextListenerDemo</listener-class>
+  </listener>
   <filter>
     <filter-name>f05</filter-name>
     <filter-class>com.ddb.javaweb.filter.EncodingFilter</filter-class>

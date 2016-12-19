@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebListener;
  * ServletContextAttributeListenerDemo
  *
  */
-//@WebListener
+@WebListener
 public class ServletContextAttributeListenerDemo implements ServletContextAttributeListener {
 
 	/**

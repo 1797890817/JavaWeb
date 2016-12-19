@@ -1,5 +1,6 @@
 package com.ddb.javaweb.listener;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpSessionListener;
  * Application Lifecycle Listener implementation class OnlineUserList
  *
  */
-//@WebListener
+@WebListener
 public class OnlineUserList implements HttpSessionAttributeListener, HttpSessionListener, ServletContextListener {
 	private ServletContext app = null;
     /**
@@ -38,7 +39,9 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
      */
     public void sessionDestroyed(HttpSessionEvent paramHttpSessionEvent)  { 
     	 Set all = (Set) this.app.getAttribute("online");
-         all.remove(paramHttpSessionEvent.getSession().getAttribute("userid"));
+    	 if (all.size()>0) {
+    		 all.remove(paramHttpSessionEvent.getSession().getAttribute("userid"));
+		}
          this.app.setAttribute("online", all);
     }
 
@@ -54,7 +57,14 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
      */
     public void attributeAdded(HttpSessionBindingEvent paramHttpSessionBindingEvent)  { 
          Set all = (Set) this.app.getAttribute("online");
-         all.add(paramHttpSessionBindingEvent.getValue());
+         String name = (String)paramHttpSessionBindingEvent.getValue();
+         try {
+			name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         all.add(name);
          this.app.setAttribute("online", all);
          }
 
